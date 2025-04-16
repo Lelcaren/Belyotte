@@ -8,7 +8,7 @@ const HireHome = ({ className = "" }) => {
       className={`w-full max-w-7xl mx-auto bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-center justify-start py-16 px-8 box-border gap-12 text-center text-base text-color-scheme-1-text font-text-tiny-normal rounded-lg shadow-sm 
       lg:py-20 lg:px-16 lg:gap-16
       md:py-16 md:px-12 md:gap-12
-      sm:py-12 sm:px-8 sm:gap-10
+      sm:py-16 sm:px-12 sm:gap-12
       xs:py-8 xs:px-4 xs:gap-8 ${className}`}
     >
       {/* Header Content */}
@@ -26,7 +26,7 @@ const HireHome = ({ className = "" }) => {
         
         {/* Heading and Subheading */}
         <div className="self-stretch flex flex-col items-center justify-start gap-6 sm:gap-4 xs:gap-3">
-          <h1 className="m-0 self-stretch text-5xl lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl font-bold leading-tight">
+          <h1 className="m-0 self-stretch text-5xl lg:text-5xl md:text-4xl sm:text-4xl xs:text-2xl font-bold leading-tight">
             Hire <span className="text-blue-600">Top Talent</span> or Find Your <span className="text-blue-700">Dream Job</span>
           </h1>
           <div className="self-stretch text-lg md:text-base sm:text-base xs:text-sm leading-relaxed text-gray-700">
@@ -61,36 +61,32 @@ const HireHome = ({ className = "" }) => {
       
       {/* Content Columns */}
       <div className="self-stretch flex flex-col items-start justify-start">
-        <div className="w-full grid grid-cols-3 gap-8 
-        lg:grid-cols-3 lg:gap-8
-        md:grid-cols-3 md:gap-6
-        sm:grid-cols-1 sm:gap-6
-        xs:grid-cols-1 xs:gap-4">
+        <div className="w-full grid grid-cols-3 gap-8 md:grid-cols-3 sm:grid-cols-3 mq450:grid-cols-1 mq450:gap-6">
           <Column1
             placeholderImage="/placeholder-image-5@2x.png"
             heading="Key Services for Businesses Hiring VAs"
             text="From executive assistance to social media management, we cover it all."
-            className="bg-white p-6 rounded-lg shadow-sm sm:p-5 xs:p-4"
+            className="bg-white p-6 rounded-lg shadow-sm mq450:p-4 w-full"
           />
           <Column1
             placeholderImage="/placeholder-image-6@2x.png"
             heading="Opportunities for Virtual Assistants"
             text="Enjoy flexible work arrangements and competitive pay."
-            className="bg-white p-6 rounded-lg shadow-sm sm:p-5 xs:p-4"
+            className="bg-white p-6 rounded-lg shadow-sm mq450:p-4 w-full"
           />
           <Column1
             placeholderImage="/placeholder-image-7@2x.png"
             heading="Gain Experience with International Businesses"
             text="Expand your skills while working with global clients."
-            className="bg-white p-6 rounded-lg shadow-sm sm:p-5 xs:p-4"
+            className="bg-white p-6 rounded-lg shadow-sm mq450:p-4 w-full"
           />
         </div>
       </div>
       
       {/* CTA Button with Link */}
-      <Link to="/virtual-assistants" className="flex flex-row items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors cursor-pointer sm:px-5 sm:py-2.5 xs:text-sm">
+      <Link to="/virtual-assistants" className="flex flex-row items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors cursor-pointer sm:px-6 sm:py-3 sm:text-base mq450:px-5 mq450:py-2.5 mq450:text-sm">
         <span className="font-medium">Get Started</span>
-        <svg className="h-5 w-5 text-white sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="h-5 w-5 text-white mq450:h-4 mq450:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </Link>

@@ -25,7 +25,7 @@ const Navbar = ({ className = "", image1 }) => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -49,7 +49,7 @@ const Navbar = ({ className = "", image1 }) => {
       <div className={`w-full bg-gradient-to-r from-blue-50 to-indigo-50 
         ${scrolled ? 'shadow-md' : 'shadow-sm'} 
         transition-all duration-300`}>
-        
+
         {/* Content container with max-width */}
         <header
           className={`w-full mx-auto
@@ -62,7 +62,7 @@ const Navbar = ({ className = "", image1 }) => {
           <Link to="/" className="flex items-center z-10 shrink-0">
             <img
               className={`relative object-cover ${
-                isDesktop ? 'w-[150px]' : isTablet ? 'w-[130px]' : 'w-[120px]'
+                isDesktop ? 'w-[150px]' : isTablet ? 'w-[130px]' : 'w-[110px]'
               }`}
               loading="lazy"
               alt="Logo"
@@ -72,15 +72,17 @@ const Navbar = ({ className = "", image1 }) => {
 
           {/* Hamburger Menu Button (only on non-desktop screens) */}
           {!isDesktop && (
-            <button 
-              className="flex flex-col justify-center items-center p-2 focus:outline-none bg-white rounded-lg shadow-md hover:bg-gray-100 transition-all duration-300 z-50 w-12 h-12 shrink-0" 
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              <div className={`w-6 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-2' : 'mb-1.5'}`}></div>
-              <div className={`w-6 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1.5'}`}></div>
-              <div className={`w-6 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></div>
-            </button>
+            <div className="ml-auto mr-2 flex items-center justify-center">
+              <button 
+                className="flex flex-col justify-center items-center p-2 focus:outline-none bg-white rounded-md shadow-sm hover:bg-gray-50 transition-all duration-300 z-50 w-10 h-10 mq450:w-9 mq450:h-9 shrink-0" 
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+              >
+                <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-1.5' : 'mb-1'}`}></div>
+                <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1'}`}></div>
+                <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}></div>
+              </button>
+            </div>
           )}
 
           {/* Desktop Navigation (only on desktop screens) */}
@@ -99,7 +101,7 @@ const Navbar = ({ className = "", image1 }) => {
                 <Link to="/contact" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 hover:text-blue-600 hover:scale-105 no-underline border-none px-1">
                   <div className="relative leading-[150%] font-medium border-none text-sm md:text-base">Contact Us</div>
                 </Link>
-                
+
                 <Button
                   alternate={false}
                   iconPosition="No icon"
@@ -116,12 +118,12 @@ const Navbar = ({ className = "", image1 }) => {
           <div 
             className={`fixed top-0 right-0 h-full bg-gradient-to-b from-blue-50 to-indigo-50 shadow-lg z-40 transform transition-all duration-500 ease-in-out ${
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-            } flex flex-col pt-24 px-6 overflow-y-auto ${
+            } flex flex-col pt-20 px-6 overflow-y-auto ${
               isMobile ? 'w-full' : 'w-3/4 max-w-md'
             }`}
           >
             {/* Mobile Menu Links with animations */}
-            <div className="flex flex-col items-start space-y-6 mb-8 w-full">
+            <div className="flex flex-col items-start space-y-4 mb-8 w-full">
               {[
                 { to: "/", text: "Home" },
                 { to: "/study-abroad", text: "Study Abroad" },
@@ -131,13 +133,13 @@ const Navbar = ({ className = "", image1 }) => {
                 <Link 
                   key={index}
                   to={link.to} 
-                  className={`w-full py-3 px-4 rounded-lg transition-all duration-300 hover:bg-white hover:text-blue-600 no-underline border-none transform ${
+                  className={`w-full py-2.5 px-4 rounded-lg transition-all duration-300 hover:bg-white hover:text-blue-600 no-underline border-none transform ${
                     isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
                   }`} 
                   style={{ transitionDelay: `${150 + (index * 75)}ms` }}
                   onClick={toggleMenu}
                 >
-                  <div className={`relative leading-[150%] font-medium border-none ${isMobile ? 'text-base' : 'text-lg'}`}>{link.text}</div>
+                  <div className={`relative leading-[150%] font-medium border-none ${isMobile ? 'text-sm' : 'text-base'}`}>{link.text}</div>
                 </Link>
               ))}
             </div>
@@ -147,10 +149,10 @@ const Navbar = ({ className = "", image1 }) => {
               <Button
                 alternate={false}
                 iconPosition="No icon"
-                small={isMobile}
+                small={true}
                 style="Primary"
                 button="Get Started"
-                className={`w-full shadow-md py-3 transform transition-all duration-300 ${
+                className={`w-full shadow-md py-2.5 transform transition-all duration-300 ${
                   isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
                 }`}
                 style={{ transitionDelay: "600ms" }}
