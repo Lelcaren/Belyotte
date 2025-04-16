@@ -3,7 +3,7 @@ import HeaderContact from "../components/HeaderContact";
 import JourneyUs from "../components/JourneyUs";
 import WhyUs from "../components/WhyUs";
 import Team from "../components/Team";
-import FormUs from "../components/FormUs";
+
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -15,7 +15,7 @@ const ContactUs = () => {
       <JourneyUs />
       <WhyUs />
       <Team />
-      <FormUs />
+     
       <Contact />
       <Footer image1="/image-1-1@2x.png" />
     </div>
