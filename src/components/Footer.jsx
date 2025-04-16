@@ -35,7 +35,10 @@ const LegalLink = ({ text, to = "#" }) => (
   </Link>
 );
 
-const Footer = ({ className = "", image1 }) => {
+const Footer = ({ className = "" }) => {
+  // Set the logo to belyotlogo.jpg from the public folder
+  const logoImage = "/belyotlogo.jpg"; // This path refers to the public folder
+  
   // Navigation links configuration with paths matching the router
   const navigationLinks = [
     { text: "Contact Us", path: "/contact" },
@@ -70,13 +73,13 @@ const Footer = ({ className = "", image1 }) => {
          mq1050:flex-wrap mq1050:justify-start mq1050:gap-6
         mq750:flex-col mq750:items-start mq750:gap-8">
         
-        {/* Logo */}
-        <div className="flex-1 overflow-hidden flex flex-col items-start justify-start min-w-[200px] mq750:flex-auto mq750:w-full">
-          <Link to="/" className="relative w-full max-w-[369px] overflow-hidden transition-all duration-500 ease-in-out hover:opacity-90">
+        {/* Logo - Reduced size */}
+        <div className="flex-1 overflow-hidden flex flex-col items-start justify-start min-w-[150px] mq750:flex-auto mq750:w-full">
+          <Link to="/" className="relative overflow-hidden transition-all duration-500 ease-in-out hover:opacity-90">
             <img
-              className="w-full object-contain"
-              alt="Company Logo"
-              src={image1}
+              className="w-32 object-contain" // Reduced from w-full max-w-[369px] to w-32
+              alt="Belyot Logo"
+              src={logoImage}
             />
           </Link>
         </div>
@@ -161,8 +164,7 @@ const Footer = ({ className = "", image1 }) => {
 };
 
 Footer.propTypes = {
-  className: PropTypes.string,
-  image1: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default Footer;

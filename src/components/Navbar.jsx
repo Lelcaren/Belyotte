@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import PropTypes from "prop-types";
 
-const Navbar = ({ className = "", image1 }) => {
+const Navbar = ({ className = "" }) => {
+  // Set the logo to belyotlogo.jpg from the public folder
+  const logoImage = "/belyotlogo.jpg"; // This path refers to the public folder
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
@@ -65,41 +68,39 @@ const Navbar = ({ className = "", image1 }) => {
                 isDesktop ? 'w-[150px]' : isTablet ? 'w-[130px]' : 'w-[110px]'
               }`}
               loading="lazy"
-              alt="Logo"
-              src={image1}
+              alt="Belyot Logo"
+              src={logoImage}
             />
           </Link>
 
-          {/* Hamburger Menu Button (only on non-desktop screens) */}
+          {/* Hamburger Menu Button (only on non-desktop screens) - Fixed positioning for small screens */}
           {!isDesktop && (
-            <div className="flex items-center justify-center">
-              <button 
-                className="flex flex-col justify-center items-center p-2 focus:outline-none bg-white rounded-md shadow-sm hover:bg-gray-50 transition-all duration-300 z-50 w-10 h-10 mq450:w-9 mq450:h-9 shrink-0" 
-                onClick={toggleMenu}
-                aria-label="Toggle menu"
-              >
-                <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-1.5' : 'mb-1'}`}></div>
-                <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1'}`}></div>
-                <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}></div>
-              </button>
-            </div>
+            <button 
+              className="flex flex-col justify-center items-center p-2 focus:outline-none bg-white rounded-md shadow-sm z-50 w-10 h-10 shrink-0" 
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-1.5' : 'mb-1'}`}></div>
+              <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1'}`}></div>
+              <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}></div>
+            </button>
           )}
 
           {/* Desktop Navigation (only on desktop screens) */}
           {isDesktop && (
             <nav className="flex flex-row items-center justify-end overflow-x-auto">
               <div className="flex flex-row items-center justify-end gap-3 md:gap-4 lg:gap-6">
-                <Link to="/" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 hover:text-blue-600 hover:scale-105 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-sm md:text-base">Home</div>
+                <Link to="/" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
+                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Home</div>
                 </Link>
-                <Link to="/study-abroad" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 hover:text-blue-600 hover:scale-105 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-sm md:text-base">Study Abroad</div>
+                <Link to="/study-abroad" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
+                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Study Abroad</div>
                 </Link>
-                <Link to="/virtual-assistants" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 hover:text-blue-600 hover:scale-105 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-sm md:text-base">Virtual Assistance</div>
+                <Link to="/virtual-assistants" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
+                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Virtual Assistance</div>
                 </Link>
-                <Link to="/contact" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 hover:text-blue-600 hover:scale-105 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-sm md:text-base">Contact Us</div>
+                <Link to="/contact" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
+                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Contact Us</div>
                 </Link>
 
                 <Button
@@ -108,7 +109,7 @@ const Navbar = ({ className = "", image1 }) => {
                   small
                   style="Primary"
                   button="Get Started"
-                  className="shadow-md hover:shadow-lg transition-shadow duration-300 ml-1 shrink-0"
+                  className="shadow-md transition-shadow duration-300 ml-1 shrink-0"
                 />
               </div>
             </nav>
@@ -125,21 +126,30 @@ const Navbar = ({ className = "", image1 }) => {
           >
             {/* Menu Header Space for Logo/Close */}
             <div className="w-full h-16 flex items-center justify-between px-4 pt-4">
-              {/* Optional: Add a close button if desired
+              {/* Logo in menu */}
+              <Link to="/" className="flex items-center" onClick={toggleMenu}>
+                <img
+                  className="h-8 w-auto object-contain"
+                  loading="lazy"
+                  alt="Belyot Logo"
+                  src={logoImage}
+                />
+              </Link>
+              
+              {/* Close button */}
               <button 
-                className="p-2 focus:outline-none rounded-full hover:bg-white/50" 
+                className="p-2 focus:outline-none rounded-full" 
                 onClick={toggleMenu}
                 aria-label="Close menu"
               >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              */}
             </div>
             
-            {/* Mobile Menu Links with animations */}
-            <div className="flex flex-col items-start w-full px-4 pt-8">
+            {/* Mobile Menu Links with animations - Increased text size */}
+            <div className="flex flex-col items-start w-full px-4 pt-6">
               {[
                 { to: "/", text: "Home" },
                 { to: "/study-abroad", text: "Study Abroad" },
@@ -149,12 +159,12 @@ const Navbar = ({ className = "", image1 }) => {
                 <Link 
                   key={index}
                   to={link.to} 
-                  className={`w-full py-3 px-3 my-1 rounded-lg transition-all duration-300 hover:bg-white hover:text-blue-600 no-underline border-none transform text-gray-800
+                  className={`w-full py-3 px-3 my-1 rounded-lg transition-all duration-300 no-underline border-none transform text-gray-800
                   ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`} 
                   style={{ transitionDelay: `${150 + (index * 75)}ms` }}
                   onClick={toggleMenu}
                 >
-                  <div className="font-medium text-sm">
+                  <div className="font-medium text-base">
                     {link.text}
                   </div>
                 </Link>
@@ -192,8 +202,7 @@ const Navbar = ({ className = "", image1 }) => {
 };
 
 Navbar.propTypes = {
-  className: PropTypes.string,
-  image1: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default Navbar;

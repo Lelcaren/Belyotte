@@ -1,8 +1,89 @@
-import Card from "./Card";
-import Button from "./Button";
 import PropTypes from "prop-types";
+import Button from "./Button";
+
+// Card component updated to receive all individual team member info
+const Card = ({ className = "", image, name, title, description }) => {
+  return (
+    <div
+      className={`
+        flex flex-col items-center justify-start 
+        gap-4 sm:gap-6
+        w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] mx-auto
+        text-center
+        text-Color-Neutral-Darkest font-Text-Small-Link
+        ${className}
+      `}
+    >
+      <img
+        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 relative rounded-full object-cover"
+        loading="lazy"
+        alt={`${name} profile`}
+        src={image}
+      />
+      <div className="w-full flex flex-col items-center gap-3 sm:gap-4">
+        <div className="w-full flex flex-col items-center">
+          <div
+            className="
+              text-base sm:text-lg md:text-xl
+              font-semibold leading-tight
+            "
+          >
+            {name}
+          </div>
+          <div
+            className="
+              text-sm sm:text-base
+              leading-normal text-gray-700 mt-1
+            "
+          >
+            {title}
+          </div>
+        </div>
+        <div
+          className="
+            text-xs sm:text-sm md:text-base
+            leading-relaxed text-gray-600
+            max-w-[240px] mx-auto
+          "
+        >
+          {description}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+Card.propTypes = {
+  className: PropTypes.string,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
 
 const Team = ({ className = "" }) => {
+  // Team member data
+  const teamMembers = [
+    {
+      image: "/kevin otey.webp",
+      name: "Kevin Otey",
+      title: "Founder & CEO",
+      description: "Passionate entrepreneur with over 10 years of experience in business operations and strategy."
+    },
+    {
+      image: "/maureen.webp",
+      name: "Maureen Johnson",
+      title: "Managing Director",
+      description: "Strategic leader specialized in optimizing business processes and client success."
+    },
+    {
+      image: "/kevin otey.webp", // You may want to replace this with another image
+      name: "James Wilson",
+      title: "Technical Lead",
+      description: "Expert in implementing cutting-edge solutions that drive business efficiency."
+    }
+  ];
+
   return (
     <section
       className={`w-full max-w-[1440px] mx-auto bg-gray-50 overflow-hidden flex flex-col items-start justify-start py-24 px-16 box-border text-left relative rounded-lg shadow-sm mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-6 ${className}`}
@@ -27,21 +108,27 @@ const Team = ({ className = "" }) => {
         <div className="w-full max-w-[1312px] flex flex-row items-start justify-between gap-16 mq750:gap-10 mq450:gap-6 mq1050:flex-col">
           <div className="flex-1 flex flex-col items-start justify-start">
             <h1 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold text-gray-900 mq450:text-2xl mq450:leading-[35px] mq1050:text-3xl mq1050:leading-[46px]">
-              Meet Our <span className="text-blue-600">Dedicated Team</span> of  Professionals
+              Meet Our <span className="text-blue-600">Dedicated Team</span> of Professionals
             </h1>
           </div>
           <div className="flex-1 flex flex-col items-start justify-start">
             <p className="self-stretch relative text-lg leading-[150%] text-gray-700">
-            "Driven by a deep passion for excellence, our dedicated owners lead a talented team committed to supporting your business with precision and professionalism. With unwavering focus and personal investment in your success, we bring unique skills and care to help your business grow and thrive."
+              "Driven by a deep passion for excellence, our dedicated owners lead a talented team committed to supporting your business with precision and professionalism. With unwavering focus and personal investment in your success, we bring unique skills and care to help your business grow and thrive."
             </p>
           </div>
         </div>
 
         {/* Cards Section */}
         <div className="self-stretch w-full max-w-[1312px] flex flex-row items-stretch justify-between gap-8 mq750:gap-6 mq450:flex-col">
-          <Card team1="/kevin otey.webp" />
-          <Card team1="/maureen.webp" />
-          <Card team1="/kevin otey.webp" />
+          {teamMembers.map((member, index) => (
+            <Card
+              key={index}
+              image={member.image}
+              name={member.name}
+              title={member.title}
+              description={member.description}
+            />
+          ))}
         </div>
 
         {/* Hiring CTA Section - Centered with shadow and rounded corners */}
