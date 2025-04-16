@@ -44,7 +44,7 @@ const Navbar = ({ className = "", image1 }) => {
   const isDesktop = windowWidth > 1200;
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-hidden">
       {/* Full-width background container */}
       <div className={`w-full bg-gradient-to-r from-blue-50 to-indigo-50 
         ${scrolled ? 'shadow-md' : 'shadow-sm'} 
@@ -72,7 +72,7 @@ const Navbar = ({ className = "", image1 }) => {
 
           {/* Hamburger Menu Button (only on non-desktop screens) */}
           {!isDesktop && (
-            <div className="ml-auto mr-2 flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <button 
                 className="flex flex-col justify-center items-center p-2 focus:outline-none bg-white rounded-md shadow-sm hover:bg-gray-50 transition-all duration-300 z-50 w-10 h-10 mq450:w-9 mq450:h-9 shrink-0" 
                 onClick={toggleMenu}
@@ -116,14 +116,30 @@ const Navbar = ({ className = "", image1 }) => {
 
           {/* Mobile Navigation (Slide-in Menu) */}
           <div 
-            className={`fixed top-0 right-0 h-full bg-gradient-to-b from-blue-50 to-indigo-50 shadow-lg z-40 transform transition-all duration-500 ease-in-out ${
-              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-            } flex flex-col pt-20 px-6 overflow-y-auto ${
-              isMobile ? 'w-full' : 'w-3/4 max-w-md'
-            }`}
+            className={`fixed top-0 right-0 h-full bg-gradient-to-b from-blue-50 to-indigo-50 shadow-lg z-40 transform transition-all duration-500 ease-in-out overflow-y-auto overflow-x-hidden
+            ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            style={{ 
+              width: isMobile ? '100%' : '75%',
+              maxWidth: isMobile ? '100%' : '300px'
+            }}
           >
+            {/* Menu Header Space for Logo/Close */}
+            <div className="w-full h-16 flex items-center justify-between px-4 pt-4">
+              {/* Optional: Add a close button if desired
+              <button 
+                className="p-2 focus:outline-none rounded-full hover:bg-white/50" 
+                onClick={toggleMenu}
+                aria-label="Close menu"
+              >
+                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              */}
+            </div>
+            
             {/* Mobile Menu Links with animations */}
-            <div className="flex flex-col items-start space-y-4 mb-8 w-full">
+            <div className="flex flex-col items-start w-full px-4 pt-8">
               {[
                 { to: "/", text: "Home" },
                 { to: "/study-abroad", text: "Study Abroad" },
@@ -133,19 +149,20 @@ const Navbar = ({ className = "", image1 }) => {
                 <Link 
                   key={index}
                   to={link.to} 
-                  className={`w-full py-2.5 px-4 rounded-lg transition-all duration-300 hover:bg-white hover:text-blue-600 no-underline border-none transform ${
-                    isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
-                  }`} 
+                  className={`w-full py-3 px-3 my-1 rounded-lg transition-all duration-300 hover:bg-white hover:text-blue-600 no-underline border-none transform text-gray-800
+                  ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`} 
                   style={{ transitionDelay: `${150 + (index * 75)}ms` }}
                   onClick={toggleMenu}
                 >
-                  <div className={`relative leading-[150%] font-medium border-none ${isMobile ? 'text-sm' : 'text-base'}`}>{link.text}</div>
+                  <div className="font-medium text-sm">
+                    {link.text}
+                  </div>
                 </Link>
               ))}
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full px-4 mt-6">
               <Button
                 alternate={false}
                 iconPosition="No icon"
