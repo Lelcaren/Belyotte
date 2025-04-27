@@ -70,7 +70,7 @@ const StudyHome = ({ className = "" }) => {
           <img
             className="h-[640px] w-full relative max-w-full overflow-hidden object-cover rounded-lg shadow-md mq1050:h-[500px] mq750:h-[400px] mq450:h-[300px]"
             alt="Students studying abroad"
-            src="/bridge2.jpg"
+            src="/canada.jpg"
           />
           <div className="flex justify-end mt-2">
             <div className="bg-white shadow px-4 py-2 rounded-lg flex items-center gap-2 -mt-16 mr-6 relative z-10">

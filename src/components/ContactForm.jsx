@@ -3,8 +3,33 @@ import Radio from "./Radio";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 const ContactForm = ({ className = "" }) => {
+  // State for dropdown selections
+  const [maritalStatus, setMaritalStatus] = useState("");
+  const [educationLevel, setEducationLevel] = useState("");
+  
+  // Options for dropdowns
+  const maritalOptions = [
+    { value: "single", label: "Single" },
+    { value: "married", label: "Married" },
+    { value: "divorced", label: "Divorced" },
+    { value: "widowed", label: "Widowed" },
+    { value: "separated", label: "Separated" },
+    { value: "other", label: "Other" }
+  ];
+  
+  const educationOptions = [
+    { value: "high_school", label: "High School" },
+    { value: "diploma", label: "Diploma" },
+    { value: "associate", label: "Associate Degree" },
+    { value: "bachelor", label: "Bachelor's Degree" },
+    { value: "master", label: "Master's Degree" },
+    { value: "doctorate", label: "Doctorate" },
+    { value: "other", label: "Other" }
+  ];
+
   return (
     <section
       className={`w-full bg-gray-50 overflow-hidden flex flex-col items-center justify-start py-12 px-4 sm:px-6 md:px-8 lg:px-12 box-border text-left text-base text-gray-800 ${className}`}
@@ -21,28 +46,44 @@ const ContactForm = ({ className = "" }) => {
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Personal Information</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block mb-2 font-medium text-gray-700">First Name</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">First Name <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Last Name</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Last Name <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Date of Birth</label>
-              <input type="date" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Date of Birth <span className="text-red-500">*</span></label>
+              <input type="date" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Phone</label>
-              <input type="tel" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Phone <span className="text-red-500">*</span></label>
+              <input type="tel" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Email</label>
-              <input type="email" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Email <span className="text-red-500">*</span></label>
+              <input type="email" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Marital Status</label>
-              <Select className="w-full p-2 border border-gray-300 rounded" />
+              <label className="block mb-2 font-medium text-gray-700">Marital Status <span className="text-red-500">*</span></label>
+              <select 
+                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                value={maritalStatus}
+                onChange={(e) => setMaritalStatus(e.target.value)}
+                required
+              >
+                <option value="">Select status</option>
+                {maritalOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block mb-2 font-medium text-gray-700">Passport Number <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
           </div>
         </div>
@@ -52,12 +93,12 @@ const ContactForm = ({ className = "" }) => {
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Address</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Address PO Box</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Address PO Box <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Town/City, Country</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Town/City, Country <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
           </div>
         </div>
@@ -67,32 +108,44 @@ const ContactForm = ({ className = "" }) => {
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Education</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Highest Education</label>
-              <Select className="w-full p-2 border border-gray-300 rounded" />
+              <label className="block mb-2 font-medium text-gray-700">Highest Education <span className="text-red-500">*</span></label>
+              <select
+                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                value={educationLevel}
+                onChange={(e) => setEducationLevel(e.target.value)}
+                required
+              >
+                <option value="">Select education level</option>
+                {educationOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Institution Name</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Institution Name <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Month-Year Started</label>
-              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Month-Year Started <span className="text-red-500">*</span></label>
+              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Month-Year Completed</label>
-              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Month-Year Completed <span className="text-red-500">*</span></label>
+              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
-              <label className="block mb-2 font-medium text-gray-700">Program/Specialty</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Program/Specialty <span className="text-red-500">*</span></label>
+              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
             <div>
               <label className="block mb-2 font-medium text-gray-700">Score</label>
               <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
             </div>
             <div className="sm:col-span-2">
-              <label className="block mb-2 font-medium text-gray-700">Month-Year Graduated</label>
-              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+              <label className="block mb-2 font-medium text-gray-700">Month-Year Graduated <span className="text-red-500">*</span></label>
+              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
             </div>
           </div>
         </div>
@@ -108,46 +161,11 @@ const ContactForm = ({ className = "" }) => {
           />
         </div>
 
-        {/* Intentions */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Your Intentions</h2>
-          <div className="mb-4">
-            <label className="block mb-2 font-medium text-gray-700">What do you want to do abroad?</label>
-            <div className="flex flex-wrap gap-6 mb-4">
-              <Checkbox label="Study" />
-              <Checkbox label="Work" />
-              <Checkbox label="Other" />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block mb-2 font-medium text-gray-700">If studies, what program?</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
-            </div>
-            <div>
-              <label className="block mb-2 font-medium text-gray-700">Level</label>
-              <Select className="w-full p-2 border border-gray-300 rounded" />
-            </div>
-            <div>
-              <label className="block mb-2 font-medium text-gray-700">Preferred country & institution</label>
-              <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
-            </div>
-            <div>
-              <label className="block mb-2 font-medium text-gray-700">Start/Intake</label>
-              <input type="month" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
-            </div>
-          </div>
-          <div className="mt-4">
-            <label className="block mb-2 font-medium text-gray-700">What is your current profession?</label>
-            <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
-          </div>
-        </div>
-
         {/* Visa Section */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Visa Information</h2>
           <div className="mb-4">
-            <label className="block mb-2 font-medium text-gray-700">Have you ever been refused a visa?</label>
+            <label className="block mb-2 font-medium text-gray-700">Have you ever been refused a visa? <span className="text-red-500">*</span></label>
             <div className="flex gap-6 mb-2">
               <Radio label="Yes" name="visaRefused" />
               <Radio label="No" name="visaRefused" />
@@ -159,14 +177,20 @@ const ContactForm = ({ className = "" }) => {
             />
           </div>
           <div className="mt-4">
-            <label className="block mb-2 font-medium text-gray-700">Who will sponsor your trip?</label>
-            <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+            <label className="block mb-2 font-medium text-gray-700">Who will sponsor your trip? <span className="text-red-500">*</span></label>
+            <input type="text" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
           </div>
         </div>
 
-        {/* Privacy Notice */}
-        <div className="mb-6 p-3 bg-blue-50 rounded border border-blue-100 text-sm text-blue-700">
-          By submitting this form, you agree to our Privacy Policy and Terms of Service.
+        {/* Terms & Conditions */}
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <input type="checkbox" id="termsCheckbox" className="h-4 w-4" required />
+            <label htmlFor="termsCheckbox" className="text-gray-700">I accept the Terms <span className="text-red-500">*</span></label>
+          </div>
+          <div className="p-3 bg-blue-50 rounded border border-blue-100 text-sm text-blue-700">
+            By submitting this form, you agree to our Privacy Policy and Terms of Service.
+          </div>
         </div>
 
         {/* Submit */}

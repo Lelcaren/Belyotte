@@ -49,23 +49,23 @@ const Navbar = ({ className = "" }) => {
   return (
     <div className="w-full overflow-hidden">
       {/* Full-width background container */}
-      <div className={`w-full bg-gradient-to-r from-blue-50 to-indigo-50 
-        ${scrolled ? 'shadow-md' : 'shadow-sm'} 
+      <div className={`w-full bg-gradient-to-r from-blue-100 to-indigo-100
+        ${scrolled ? 'shadow-lg' : 'shadow-sm'} 
         transition-all duration-300`}>
 
         {/* Content container with max-width */}
         <header
           className={`w-full mx-auto
           py-4 flex flex-row items-center justify-between text-left text-base 
-          text-color-scheme-1-text font-text-tiny-normal
+          text-gray-800 font-text-tiny-normal
           ${isDesktop ? 'max-w-[1200px]' : 'w-full'} 
           ${isDesktop ? 'px-6' : isTablet ? 'px-6' : 'px-4'} ${className}`}
         >
-          {/* Logo */}
-          <Link to="/" className="flex items-center z-10 shrink-0">
+          {/* Logo - adjusted to ensure it doesn't cause overflow */}
+          <Link to="/" className="flex items-center z-10 shrink-0 transition-transform duration-300 hover:scale-105">
             <img
               className={`relative object-cover ${
-                isDesktop ? 'w-[150px]' : isTablet ? 'w-[130px]' : 'w-[110px]'
+                isDesktop ? 'w-[150px]' : isTablet ? 'w-[130px]' : 'w-[100px]'
               }`}
               loading="lazy"
               alt="Belyot Logo"
@@ -73,34 +73,34 @@ const Navbar = ({ className = "" }) => {
             />
           </Link>
 
-          {/* Hamburger Menu Button (only on non-desktop screens) - Fixed positioning for small screens */}
+          {/* Hamburger Menu Button - moved to the left with right margin */}
           {!isDesktop && (
             <button 
-              className="flex flex-col justify-center items-center p-2 focus:outline-none bg-white rounded-md shadow-sm z-50 w-10 h-10 shrink-0" 
+              className="flex flex-col justify-center items-center p-2 focus:outline-none bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md z-50 w-10 h-10 shrink-0 transition-all duration-300 mr-2" 
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-1.5' : 'mb-1'}`}></div>
-              <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1'}`}></div>
-              <div className={`w-5 h-0.5 bg-blue-600 transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}></div>
+              <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-1.5' : 'mb-1.5'}`}></div>
+              <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'mb-1.5'}`}></div>
+              <div className={`w-5 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45 -translate-y-1.5' : ''}`}></div>
             </button>
           )}
 
           {/* Desktop Navigation (only on desktop screens) */}
           {isDesktop && (
             <nav className="flex flex-row items-center justify-end overflow-x-auto">
-              <div className="flex flex-row items-center justify-end gap-3 md:gap-4 lg:gap-6">
-                <Link to="/" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Home</div>
+              <div className="flex flex-row items-center justify-end gap-6 lg:gap-8">
+                <Link to="/" className="flex items-center justify-center whitespace-nowrap transition-all duration-300 no-underline border-b-2 border-transparent hover:border-blue-500 px-1 hover:text-blue-600">
+                  <div className="relative leading-[150%] font-medium text-base md:text-lg">Home</div>
                 </Link>
-                <Link to="/study-abroad" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Study Abroad</div>
+                <Link to="/study-abroad" className="flex items-center justify-center whitespace-nowrap transition-all duration-300 no-underline border-b-2 border-transparent hover:border-blue-500 px-1 hover:text-blue-600">
+                  <div className="relative leading-[150%] font-medium text-base md:text-lg">Study Abroad</div>
                 </Link>
-                <Link to="/virtual-assistants" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Virtual Assistance</div>
+                <Link to="/virtual-assistants" className="flex items-center justify-center whitespace-nowrap transition-all duration-300 no-underline border-b-2 border-transparent hover:border-blue-500 px-1 hover:text-blue-600">
+                  <div className="relative leading-[150%] font-medium text-base md:text-lg">Virtual Assistance</div>
                 </Link>
-                <Link to="/contact" className="flex items-center justify-center whitespace-nowrap transition-colors duration-300 no-underline border-none px-1">
-                  <div className="relative leading-[150%] font-medium border-none text-base md:text-lg">Contact Us</div>
+                <Link to="/contact" className="flex items-center justify-center whitespace-nowrap transition-all duration-300 no-underline border-b-2 border-transparent hover:border-blue-500 px-1 hover:text-blue-600">
+                  <div className="relative leading-[150%] font-medium text-base md:text-lg">Contact Us</div>
                 </Link>
 
                 <Button
@@ -109,7 +109,7 @@ const Navbar = ({ className = "" }) => {
                   small
                   style="Primary"
                   button="Get Started"
-                  className="shadow-md transition-shadow duration-300 ml-1 shrink-0"
+                  className="shadow-md hover:shadow-lg transition-all duration-300 ml-1 shrink-0 transform hover:scale-105"
                 />
               </div>
             </nav>
@@ -117,17 +117,17 @@ const Navbar = ({ className = "" }) => {
 
           {/* Mobile Navigation (Slide-in Menu) */}
           <div 
-            className={`fixed top-0 right-0 h-full bg-gradient-to-b from-blue-50 to-indigo-50 shadow-lg z-40 transform transition-all duration-500 ease-in-out overflow-y-auto overflow-x-hidden
+            className={`fixed top-0 right-0 h-full bg-gradient-to-br from-indigo-100 via-blue-50 to-white shadow-xl z-40 transform transition-all duration-500 ease-in-out overflow-y-auto overflow-x-hidden
             ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             style={{ 
-              width: isMobile ? '100%' : '75%',
-              maxWidth: isMobile ? '100%' : '300px'
+              width: isMobile ? '100%' : '80%',
+              maxWidth: isMobile ? '100%' : '350px'
             }}
           >
-            {/* Menu Header Space for Logo/Close */}
-            <div className="w-full h-16 flex items-center justify-between px-4 pt-4">
-              {/* Logo in menu */}
-              <Link to="/" className="flex items-center" onClick={toggleMenu}>
+            {/* Menu Header - Now with only the hamburger button as close mechanism */}
+            <div className="w-full bg-blue-500 text-white p-6 flex items-center justify-between">
+              {/* Logo in menu - with white background */}
+              <Link to="/" className="flex items-center bg-white rounded-lg p-1" onClick={toggleMenu}>
                 <img
                   className="h-8 w-auto object-contain"
                   loading="lazy"
@@ -136,35 +136,44 @@ const Navbar = ({ className = "" }) => {
                 />
               </Link>
               
-              {/* Close button */}
+              {/* Same hamburger button as toggle/close - now transforms to X when open */}
               <button 
-                className="p-2 focus:outline-none rounded-full" 
+                className="flex flex-col justify-center items-center p-2 focus:outline-none bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md w-10 h-10 shrink-0 transition-all duration-300" 
                 onClick={toggleMenu}
                 aria-label="Close menu"
               >
-                <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <div className="w-5 h-0.5 bg-white transition-all duration-300 transform rotate-45 translate-y-1"></div>
+                <div className="w-5 h-0.5 bg-white transition-all duration-300 opacity-0"></div>
+                <div className="w-5 h-0.5 bg-white transition-all duration-300 transform -rotate-45 -translate-y-1"></div>
               </button>
             </div>
             
-            {/* Mobile Menu Links with animations - Increased text size */}
-            <div className="flex flex-col items-start w-full px-4 pt-6">
+            {/* Mobile Menu Links */}
+            <div className="flex flex-col items-start w-full p-6">
+              <h2 className="text-lg font-bold text-blue-600 mb-4">Navigation</h2>
+              
               {[
-                { to: "/", text: "Home" },
-                { to: "/study-abroad", text: "Study Abroad" },
-                { to: "/virtual-assistants", text: "Virtual Assistance" },
-                { to: "/contact", text: "Contact Us" }
+                { to: "/", text: "Home", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+                { to: "/study-abroad", text: "Study Abroad", icon: "M3 21v-4m0 0V5a2 2 0 012-2h6.5L21 11.5V17a2 2 0 01-2 2h-5.5" },
+                { to: "/virtual-assistants", text: "Virtual Assistance", icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+                { to: "/contact", text: "Contact Us", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" }
               ].map((link, index) => (
                 <Link 
                   key={index}
                   to={link.to} 
-                  className={`w-full py-3 px-3 my-1 rounded-lg transition-all duration-300 no-underline border-none transform text-gray-800
+                  className={`w-full py-4 px-4 my-1 rounded-lg transition-all duration-300 no-underline flex items-center text-gray-800 hover:bg-blue-50 hover:shadow-md
                   ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`} 
                   style={{ transitionDelay: `${150 + (index * 75)}ms` }}
                   onClick={toggleMenu}
                 >
-                  <div className="font-medium text-base">
+                  {/* Icon */}
+                  <div className="mr-3 bg-blue-100 rounded-full p-2 text-blue-600">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={link.icon} />
+                    </svg>
+                  </div>
+                  {/* Text */}
+                  <div className="font-medium text-lg">
                     {link.text}
                   </div>
                 </Link>
@@ -172,15 +181,16 @@ const Navbar = ({ className = "" }) => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex flex-col w-full px-4 mt-6">
+            <div className="flex flex-col w-full px-6 mt-4">
+              <div className="border-t border-gray-200 w-full pt-6 mb-4"></div>
               <Button
                 alternate={false}
                 iconPosition="No icon"
-                small={true}
+                small={false}
                 style="Primary"
                 button="Get Started"
-                className={`w-full shadow-md py-2.5 transform transition-all duration-300 ${
-                  isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+                className={`w-full shadow-md py-4 text-lg font-bold transition-all transform hover:shadow-lg hover:scale-105 duration-300
+                  ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
                 }`}
                 style={{ transitionDelay: "600ms" }}
                 onClick={toggleMenu}
@@ -191,7 +201,7 @@ const Navbar = ({ className = "" }) => {
           {/* Overlay when mobile menu is open */}
           {isMenuOpen && (
             <div 
-              className="fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300"
+              className="fixed inset-0 bg-black bg-opacity-60 z-30 transition-opacity duration-300 backdrop-blur-sm"
               onClick={toggleMenu}
             ></div>
           )}

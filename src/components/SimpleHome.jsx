@@ -16,10 +16,10 @@ const SimpleHome = ({ className = "" }) => {
       </h1>
       
       <div className="self-stretch flex flex-col items-start justify-start text-5xl mq750:gap-8 mq450:gap-4">
-        <div className="self-stretch flex flex-row items-start justify-center flex-wrap content-start gap-12 mq750:gap-6">
+        <div className="self-stretch flex flex-row items-stretch justify-center flex-wrap content-start gap-12 mq750:gap-6">
           
           {/* First Card */}
-          <div className="flex-1 flex flex-col items-center justify-start gap-8 min-w-[280px] max-w-full mq450:gap-4">
+          <div className="flex-1 flex flex-col items-center justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4">
             <div className="self-stretch flex flex-col items-center justify-start gap-6">
               <img
                 className="w-12 h-12 relative overflow-hidden shrink-0"
@@ -53,7 +53,7 @@ const SimpleHome = ({ className = "" }) => {
           </div>
           
           {/* Second Card */}
-          <div className="flex-1 flex flex-col items-center justify-start gap-8 min-w-[280px] max-w-full mq450:gap-4">
+          <div className="flex-1 flex flex-col items-center justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4">
             <div className="self-stretch flex flex-col items-center justify-start gap-6">
               <img
                 className="w-12 h-12 relative overflow-hidden shrink-0"
@@ -86,7 +86,7 @@ const SimpleHome = ({ className = "" }) => {
           </div>
           
           {/* Third Card */}
-          <div className="flex-1 flex flex-col items-center justify-start gap-8 min-w-[280px] max-w-full mq450:gap-4">
+          <div className="flex-1 flex flex-col items-center justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4">
             <div className="self-stretch flex flex-col items-center justify-start gap-6">
               <img
                 className="w-12 h-12 relative overflow-hidden shrink-0"
