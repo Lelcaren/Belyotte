@@ -36,8 +36,8 @@ const LegalLink = ({ text, to = "#" }) => (
 );
 
 const Footer = ({ className = "" }) => {
-  // Set the logo to belyotlogo.jpg from the public folder
-  const logoImage = "/belyotlogo.jpg"; // This path refers to the public folder
+  // Set the logo to footerlogo.png from the public folder
+  const logoImage = "/footerlogo.png"; // This path refers to the public folder
   
   // Navigation links configuration with paths matching the router
   const navigationLinks = [
@@ -150,7 +150,7 @@ const Footer = ({ className = "" }) => {
         <div className="flex flex-row items-center justify-between w-full gap-6 flex-wrap
             mq450:gap-4 mq450:justify-center">
           <div className="relative leading-[150%] text-whitesmoke text-opacity-70">
-            © 2025 Relume. All rights reserved.
+            © 2025 Belyotte Agency. All rights reserved.
           </div>
           <div className="flex flex-row items-center gap-6 mq450:gap-4">
             {legalLinks.map((link, index) => (

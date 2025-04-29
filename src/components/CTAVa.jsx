@@ -123,7 +123,7 @@ const CTAVa = ({ className = "" }) => {
             className="h-[400px] w-full object-cover mq750:h-auto mq750:aspect-video"
             loading="lazy"
             alt="Virtual assistant working remotely"
-            src="/join@2x.png"
+            src="/ctava.jpg"
           />
         </div>
       </div>

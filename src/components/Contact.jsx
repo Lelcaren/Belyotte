@@ -24,9 +24,9 @@ const Contact = ({ className = "" }) => {
         </div>
       </div>
 
-      <div className="self-stretch flex flex-row items-start justify-center flex-wrap content-start gap-12 mq750:gap-6 mq450:flex-col mq450:items-center">
+      <div className="self-stretch flex flex-row items-stretch justify-center flex-wrap gap-12 mq750:gap-6 mq450:flex-col mq450:items-center">
         {/* Email Card */}
-        <div className="flex-1 flex flex-col items-start justify-start gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm">
+        <div className="flex-1 flex flex-col items-start justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm h-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-6">
             <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -41,7 +41,7 @@ const Contact = ({ className = "" }) => {
               Get in touch with our advisors for personalized support.
             </div>
           </div>
-          <div className="self-stretch flex flex-col items-start justify-start text-base">
+          <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
             <div className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
               <div className="relative leading-[150%] font-medium">hello@relume.io</div>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -52,7 +52,7 @@ const Contact = ({ className = "" }) => {
         </div>
         
         {/* Phone Card */}
-        <div className="flex-1 flex flex-col items-start justify-start gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm">
+        <div className="flex-1 flex flex-col items-start justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm h-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-6">
             <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -66,7 +66,7 @@ const Contact = ({ className = "" }) => {
               Reach out to us anytime for assistance.
             </div>
           </div>
-          <div className="self-stretch flex flex-col items-start justify-start text-base">
+          <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
             <div className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
               <div className="relative leading-[150%] font-medium">+1 (555) 000-0000</div>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -77,7 +77,7 @@ const Contact = ({ className = "" }) => {
         </div>
         
         {/* Office Card */}
-        <div className="flex-1 flex flex-col items-start justify-start gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm">
+        <div className="flex-1 flex flex-col items-start justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm h-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-6">
             <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -91,7 +91,7 @@ const Contact = ({ className = "" }) => {
               Visit us for in-person consultations and support.
             </div>
           </div>
-          <div className="self-stretch flex flex-col items-start justify-start text-base">
+          <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
             <div className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
               <div className="relative leading-[150%] font-medium">123 Sample St, Sydney NSW 2000 AU</div>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

@@ -4,8 +4,8 @@ import Button from "./Button";
 import PropTypes from "prop-types";
 
 const Navbar = ({ className = "" }) => {
-  // Set the logo to belyotlogo.jpg from the public folder
-  const logoImage = "/belyotlogo.jpg"; // This path refers to the public folder
+  // Set the logo to logomain.png from the public folder
+  const logoImage = "/logomain.png"; // This path refers to the public folder
   
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

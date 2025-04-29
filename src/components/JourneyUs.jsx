@@ -48,7 +48,7 @@ const JourneyUs = ({ className = "" }) => {
             className="h-[640px] w-full object-cover mq1200:h-[580px] mq750:h-auto mq750:aspect-video"
             loading="lazy"
             alt="Company journey and international connections"
-            src="/our@2x.png"
+            src="/ctava.jpg"
           />
         </div>
       </div>

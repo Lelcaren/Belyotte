@@ -16,7 +16,7 @@ const ExploreDiverseStudy = ({ className = "" }) => {
           </div>
         </div>
         <h1 className="m-0 w-full max-w-[768px] relative font-bold leading-[120%] text-29xl mq1050:text-19xl mq1050:leading-[46px] mq750:text-15xl mq450:text-10xl mq450:leading-[35px]">
-          Explore Diverse Study Opportunities Across <span className="text-blue-600">Five</span> Dynamic Countries
+          Explore Diverse Study Opportunities Across <span className="text-blue-600">Six</span> Dynamic Countries
         </h1>
       </div>
       
@@ -35,7 +35,7 @@ const ExploreDiverseStudy = ({ className = "" }) => {
             </h3>
             <div className="self-stretch relative text-base leading-[150%] text-gray-700">
               Discover the unique advantages of studying in Canada, USA, UK,
-              Germany, and Ireland.
+              Germany,Ireland and Australia.
             </div>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start text-base">
