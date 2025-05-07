@@ -67,19 +67,19 @@ const Team = ({ className = "" }) => {
     {
       image: "/kevin otey.webp",
       name: "Kevin Otey",
-      title: "Founder & CEO",
+      title: "Managing Partner",
       description: "Passionate entrepreneur with over 10 years of experience in business operations and strategy."
     },
     {
       image: "/maureen.webp",
-      name: "Maureen Johnson",
-      title: "Managing Director",
+      name: "Dr.Maureen Serem",
+      title: "Managing Partner",
       description: "Strategic leader specialized in optimizing business processes and client success."
     },
     {
-      image: "/kevin otey.webp", // You may want to replace this with another image
-      name: "James Wilson",
-      title: "Technical Lead",
+      image: "/gran.jpg", // You may want to replace this with another image
+      name: "Dr.Vincent Serem",
+      title: "Managing Partner",
       description: "Expert in implementing cutting-edge solutions that drive business efficiency."
     }
   ];

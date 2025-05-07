@@ -121,11 +121,15 @@ const Footer = ({ className = "" }) => {
         <div className="flex flex-col gap-4">
           <h3 className="font-semibold text-base">Contact Details</h3>
           <div className="text-sm leading-relaxed text-whitesmoke text-opacity-80">
-            <p>123 Education Avenue</p>
-            <p>Global City, 10001</p>
-            <Link to="/contact" className="block hover:text-white transition-all duration-300 ease-in-out mt-2">
-              hello@studyabroad.com
-            </Link>
+            <p>Eldoret, Kenya</p>
+            <p>Tiloi Plaza, opposite the Catholic Cathedral</p>
+            <p>1st floor</p>
+            <a href="https://belyotteagency.com" className="block hover:text-white transition-all duration-300 ease-in-out mt-1">
+              belyotteagency.com
+            </a>
+            <a href="https://wa.me/254735681725" className="block hover:text-white transition-all duration-300 ease-in-out mt-1">
+              WhatsApp: +254735681725
+            </a>
           </div>
         </div>
         

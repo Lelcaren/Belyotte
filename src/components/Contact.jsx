@@ -35,23 +35,23 @@ const Contact = ({ className = "" }) => {
               </svg>
             </div>
             <h3 className="m-0 self-stretch relative text-xl leading-[140%] font-bold text-gray-800">
-              Email
+              Website
             </h3>
             <div className="self-stretch relative text-base leading-[150%] text-gray-700">
-              Get in touch with our advisors for personalized support.
+              Visit our website for more information about our services.
             </div>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
-            <div className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
-              <div className="relative leading-[150%] font-medium">hello@relume.io</div>
+            <a href="https://belyotteagency.com" className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
+              <div className="relative leading-[150%] font-medium">belyotteagency.com</div>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </div>
+            </a>
           </div>
         </div>
         
-        {/* Phone Card */}
+        {/* WhatsApp Card */}
         <div className="flex-1 flex flex-col items-start justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm h-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-6">
             <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
@@ -60,19 +60,19 @@ const Contact = ({ className = "" }) => {
               </svg>
             </div>
             <h3 className="m-0 self-stretch relative text-xl leading-[140%] font-bold text-gray-800">
-              Phone
+              WhatsApp
             </h3>
             <div className="self-stretch relative text-base leading-[150%] text-gray-700">
-              Reach out to us anytime for assistance.
+              Message us directly for quick assistance.
             </div>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
-            <div className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
-              <div className="relative leading-[150%] font-medium">+1 (555) 000-0000</div>
+            <a href="https://wa.me/254735681725" className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
+              <div className="relative leading-[150%] font-medium">+254 735 681 725</div>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </div>
+            </a>
           </div>
         </div>
         
@@ -92,11 +92,10 @@ const Contact = ({ className = "" }) => {
             </div>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
-            <div className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
-              <div className="relative leading-[150%] font-medium">123 Sample St, Sydney NSW 2000 AU</div>
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
+            <div className="overflow-hidden flex flex-col items-start gap-1 text-gray-700">
+              <div className="relative leading-[150%]">Eldoret, Kenya</div>
+              <div className="relative leading-[150%]">Tiloi Plaza, opposite the Catholic Cathedral</div>
+              <div className="relative leading-[150%]">1st floor</div>
             </div>
           </div>
         </div>
