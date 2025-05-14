@@ -124,9 +124,6 @@ const Footer = ({ className = "" }) => {
             <p>Eldoret, Kenya</p>
             <p>Tiloi Plaza, opposite the Catholic Cathedral</p>
             <p>1st floor</p>
-            <a href="https://belyotteagency.com" className="block hover:text-white transition-all duration-300 ease-in-out mt-1">
-              belyotteagency.com
-            </a>
             <a href="https://wa.me/254735681725" className="block hover:text-white transition-all duration-300 ease-in-out mt-1">
               WhatsApp: +254735681725
             </a>

@@ -25,25 +25,25 @@ const Contact = ({ className = "" }) => {
       </div>
 
       <div className="self-stretch flex flex-row items-stretch justify-center flex-wrap gap-12 mq750:gap-6 mq450:flex-col mq450:items-center">
-        {/* Email Card */}
+        {/* Email Card - Replacement for Website Card */}
         <div className="flex-1 flex flex-col items-start justify-between gap-8 min-w-[280px] max-w-full mq450:gap-4 bg-white p-6 rounded-lg shadow-sm h-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-6">
             <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path fillRule="evenodd" d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
             </div>
             <h3 className="m-0 self-stretch relative text-xl leading-[140%] font-bold text-gray-800">
-              Website
+              Email
             </h3>
             <div className="self-stretch relative text-base leading-[150%] text-gray-700">
-              Visit our website for more information about our services.
+              Send us an email and we'll respond within 24 hours.
             </div>
           </div>
           <div className="self-stretch flex flex-col items-start justify-start text-base mt-auto">
-            <a href="https://belyotteagency.com" className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
-              <div className="relative leading-[150%] font-medium">belyotteagency.com</div>
+            <a href="mailto:info@belyotteagency.com" className="overflow-hidden flex flex-row items-center justify-center gap-2 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
+              <div className="relative leading-[150%] font-medium">info@belyotteagency.com</div>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
