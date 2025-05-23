@@ -73,7 +73,7 @@ const ExploreVa = ({ className = "" }) => {
       {/* Cards section */}
       <div className="w-full max-w-[1300px] flex flex-row flex-wrap items-stretch justify-center gap-8 z-10 text-left text-xl text-gray-800">
         <Column
-          placeholderImage="/public/find@2x.png"
+          placeholderImage="/find@2x.png"
           heading="Find the Perfect Virtual Assistant for Your Business Today"
           headingColor="#192c51"
           textDuisCursusMiQuisViverra="Our virtual assistants are skilled professionals ready to support your business with administrative tasks, customer service, and more."
@@ -83,7 +83,7 @@ const ExploreVa = ({ className = "" }) => {
           iconChevronRight="/icon--chevronright-1.svg"
         />
         <Column
-          placeholderImage="/public/unlock@2x.png"
+          placeholderImage="/unlock@2x.png"
           heading="Unlock Your Potential with Our Virtual Assistant Job Opportunities"
           headingColor="#192c51"
           textDuisCursusMiQuisViverra="Join our network of virtual assistants and take control of your career with flexible hours and competitive compensation."
@@ -93,7 +93,7 @@ const ExploreVa = ({ className = "" }) => {
           iconChevronRight="/icon--chevronright-1.svg"
         />
         <Column
-          placeholderImage="/public/diverse@2x.png"
+          placeholderImage="/diverse@2x.png"
           heading="Diverse Roles Available: Find Your Ideal Virtual Assistant Position"
           headingColor="#192c51"
           textDuisCursusMiQuisViverra="Browse our listings to discover exciting job opportunities tailored for your skills and experience in the virtual assistant field."
