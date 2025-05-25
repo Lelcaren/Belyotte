@@ -49,10 +49,10 @@ const SimpleStepsVa = ({ className = "" }) => {
 
   return (
     <section
-      className={`w-full bg-gray-50 overflow-hidden flex flex-col items-center justify-center py-24 px-16 box-border gap-16 relative rounded-lg mq750:py-16 mq750:px-8 mq750:box-border mq750:gap-10 mq450:gap-8 ${className}`}
+      className={`w-full max-w-none bg-gray-50 overflow-hidden flex flex-col items-center justify-center py-24 px-16 box-border gap-16 relative rounded-lg mq750:py-16 mq750:px-8 mq750:box-border mq750:gap-10 mq450:gap-8 ${className}`}
     >
       {/* Header section with heading and description */}
-      <div className="w-full max-w-[1312px] flex flex-row items-start justify-between gap-16 mq1050:flex-col mq750:gap-8 mq450:gap-6">
+      <div className="w-full flex flex-row items-start justify-between gap-16 mq1050:flex-col mq750:gap-8 mq450:gap-6">
         <div className="flex-1 overflow-hidden flex flex-col items-start justify-start">
           <h2 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold font-inherit text-gray-900 mq1050:text-3xl mq1050:leading-[38px] mq450:text-2xl mq450:leading-[29px]">
             Simple Steps to Hire the <span className="text-blue-600">Perfect</span> Virtual Assistant for Your Business
@@ -70,7 +70,7 @@ const SimpleStepsVa = ({ className = "" }) => {
 
       {/* Steps cards section */}
       <div className="self-stretch flex flex-col items-center justify-start">
-        <div className="w-full max-w-[1312px] flex flex-row items-stretch justify-between gap-8 mq750:gap-6 mq450:flex-col">
+        <div className="w-full flex flex-row items-stretch justify-between gap-8 mq750:gap-6 mq450:flex-col">
           <Column2
             icon={followIcon}
             heading="Follow These Easy Steps to Hire Your Virtual Assistant Today"

@@ -67,7 +67,7 @@ Button.propTypes = {
 const StepsVa = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-[1440px] mx-auto bg-gray-50 overflow-hidden flex flex-col items-center justify-start py-28 px-16 box-border gap-20 text-center text-base text-gray-900 relative rounded-lg shadow-sm mq750:gap-10 mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-8 mq1050:pt-20 mq1050:pb-20 mq1050:box-border ${className}`}
+      className={`w-full bg-gray-50 overflow-hidden flex flex-col items-center justify-start py-28 px-16 box-border gap-20 text-center text-base text-gray-900 relative rounded-lg shadow-sm mq750:gap-10 mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-8 mq1050:pt-20 mq1050:pb-20 mq1050:box-border ${className}`}
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full filter blur-3xl opacity-30 translate-x-1/3 -translate-y-1/3"></div>
@@ -101,7 +101,7 @@ const StepsVa = ({ className = "" }) => {
       
       {/* Steps section */}
       <div className="self-stretch flex flex-col items-start justify-start z-10 mq750:gap-8 mq450:gap-4">
-        <div className="w-full max-w-[1312px] mx-auto flex flex-row items-stretch justify-center gap-12 mq1050:flex-row mq750:flex-col mq750:gap-6">
+        <div className="w-full flex flex-row items-stretch justify-center gap-12 max-w-7xl mx-auto mq1050:flex-row mq750:flex-col mq750:gap-6">
           <Column2
             create="/create@2x.png"
             heading="Create Your Profile Today"

@@ -77,7 +77,7 @@ const Team = ({ className = "" }) => {
       description: "Strategic leader specialized in optimizing business processes and client success."
     },
     {
-      image: "/gran.jpg", // You may want to replace this with another image
+      image: "/gran.jpg",
       name: "Dr.Vincent Serem",
       title: "Managing Partner",
       description: "Expert in implementing cutting-edge solutions that drive business efficiency."
@@ -105,7 +105,7 @@ const Team = ({ className = "" }) => {
       {/* Content Container */}
       <div className="self-stretch z-10 flex flex-col items-start justify-start gap-16 mq750:gap-10 mq450:gap-8">
         {/* Title and Description */}
-        <div className="w-full max-w-[1312px] flex flex-row items-start justify-between gap-16 mq750:gap-10 mq450:gap-6 mq1050:flex-col">
+        <div className="w-full flex flex-row items-start justify-between gap-16 mq750:gap-10 mq450:gap-6 mq1050:flex-col">
           <div className="flex-1 flex flex-col items-start justify-start">
             <h1 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold text-gray-900 mq450:text-2xl mq450:leading-[35px] mq1050:text-3xl mq1050:leading-[46px]">
               Meet Our <span className="text-blue-600">Dedicated Team</span> of Professionals
@@ -118,8 +118,8 @@ const Team = ({ className = "" }) => {
           </div>
         </div>
 
-        {/* Cards Section */}
-        <div className="self-stretch w-full max-w-[1312px] flex flex-row items-stretch justify-between gap-8 mq750:gap-6 mq450:flex-col">
+        {/* Cards Section - Fixed for better large screen distribution */}
+        <div className="self-stretch w-full flex flex-row items-stretch justify-center gap-8 xl:gap-16 mq750:gap-6 mq450:flex-col">
           {teamMembers.map((member, index) => (
             <Card
               key={index}
@@ -132,7 +132,7 @@ const Team = ({ className = "" }) => {
         </div>
 
         {/* Hiring CTA Section - Centered with shadow and rounded corners */}
-        <div className="self-stretch w-full max-w-[1312px] flex flex-col items-center justify-center gap-6 bg-white p-12 rounded-lg shadow-md mq750:p-8 mq450:p-6">
+        <div className="self-stretch w-full flex flex-col items-center justify-center gap-6 bg-white p-12 rounded-lg shadow-md mq750:p-8 mq450:p-6">
           <h2 className="text-3xl font-bold leading-tight text-gray-900 mq450:text-2xl">
             We're <span className="text-blue-600">Hiring!</span>
           </h2>

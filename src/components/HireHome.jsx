@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const HireHome = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-7xl mx-auto bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-center justify-start py-16 px-8 box-border gap-12 text-center text-base text-color-scheme-1-text font-text-tiny-normal rounded-lg shadow-sm 
+      className={`w-full xl:max-w-none lg:max-w-7xl mx-auto bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-center justify-start py-16 px-8 box-border gap-12 text-center text-base text-color-scheme-1-text font-text-tiny-normal rounded-lg shadow-sm 
       lg:py-20 lg:px-16 lg:gap-16
       md:py-16 md:px-12 md:gap-12
       sm:py-16 sm:px-12 sm:gap-12

@@ -65,43 +65,46 @@ const ExploreVa = ({ className = "" }) => {
         </div>
       </div>
       
-      {/* Heading */}
-      <div className="max-w-[768px] relative text-4xl leading-[120%] font-semibold text-gray-900 z-10 mq450:text-2xl mq450:leading-[34px] mq1050:text-3xl mq1050:leading-[44px]">
-        Explore Our <span className="text-blue-600">Diverse Categories</span> of Virtual Assistants to Meet Your Needs
-      </div>
-      
-      {/* Cards section */}
-      <div className="w-full max-w-[1300px] flex flex-row flex-wrap items-stretch justify-center gap-8 z-10 text-left text-xl text-gray-800">
-        <Column
-          placeholderImage="/find@2x.png"
-          heading="Find the Perfect Virtual Assistant for Your Business Today"
-          headingColor="#192c51"
-          textDuisCursusMiQuisViverra="Our virtual assistants are skilled professionals ready to support your business with administrative tasks, customer service, and more."
-          textDuisCursusColor="#4b5563"
-          button="Explore"
-          buttonColor="#192c51"
-          iconChevronRight="/icon--chevronright-1.svg"
-        />
-        <Column
-          placeholderImage="/unlock@2x.png"
-          heading="Unlock Your Potential with Our Virtual Assistant Job Opportunities"
-          headingColor="#192c51"
-          textDuisCursusMiQuisViverra="Join our network of virtual assistants and take control of your career with flexible hours and competitive compensation."
-          textDuisCursusColor="#4b5563"
-          button="Join"
-          buttonColor="#192c51"
-          iconChevronRight="/icon--chevronright-1.svg"
-        />
-        <Column
-          placeholderImage="/diverse@2x.png"
-          heading="Diverse Roles Available: Find Your Ideal Virtual Assistant Position"
-          headingColor="#192c51"
-          textDuisCursusMiQuisViverra="Browse our listings to discover exciting job opportunities tailored for your skills and experience in the virtual assistant field."
-          textDuisCursusColor="#4b5563"
-          button="Browse"
-          buttonColor="#192c51"
-          iconChevronRight="/icon--chevronright-1.svg"
-        />
+      {/* Content wrapper with max-width constraint for readability */}
+      <div className="w-full max-w-[1300px] mx-auto flex flex-col items-center justify-start gap-16 z-10">
+        {/* Heading */}
+        <div className="max-w-[768px] relative text-4xl leading-[120%] font-semibold text-gray-900 mq450:text-2xl mq450:leading-[34px] mq1050:text-3xl mq1050:leading-[44px]">
+          Explore Our <span className="text-blue-600">Diverse Categories</span> of Virtual Assistants to Meet Your Needs
+        </div>
+        
+        {/* Cards section */}
+        <div className="w-full flex flex-row flex-wrap items-stretch justify-center gap-8 text-left text-xl text-gray-800">
+          <Column
+            placeholderImage="/find@2x.png"
+            heading="Find the Perfect Virtual Assistant for Your Business Today"
+            headingColor="#192c51"
+            textDuisCursusMiQuisViverra="Our virtual assistants are skilled professionals ready to support your business with administrative tasks, customer service, and more."
+            textDuisCursusColor="#4b5563"
+            button="Explore"
+            buttonColor="#192c51"
+            iconChevronRight="/icon--chevronright-1.svg"
+          />
+          <Column
+            placeholderImage="/unlock@2x.png"
+            heading="Unlock Your Potential with Our Virtual Assistant Job Opportunities"
+            headingColor="#192c51"
+            textDuisCursusMiQuisViverra="Join our network of virtual assistants and take control of your career with flexible hours and competitive compensation."
+            textDuisCursusColor="#4b5563"
+            button="Join"
+            buttonColor="#192c51"
+            iconChevronRight="/icon--chevronright-1.svg"
+          />
+          <Column
+            placeholderImage="/diverse@2x.png"
+            heading="Diverse Roles Available: Find Your Ideal Virtual Assistant Position"
+            headingColor="#192c51"
+            textDuisCursusMiQuisViverra="Browse our listings to discover exciting job opportunities tailored for your skills and experience in the virtual assistant field."
+            textDuisCursusColor="#4b5563"
+            button="Browse"
+            buttonColor="#192c51"
+            iconChevronRight="/icon--chevronright-1.svg"
+          />
+        </div>
       </div>
       
       {/* Decorative element in bottom left */}

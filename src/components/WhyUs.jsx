@@ -20,7 +20,7 @@ const WhyUs = ({ className = "" }) => {
       </div>
       
       {/* Content */}
-      <div className="self-stretch flex flex-row items-center justify-between flex-wrap content-center gap-20 z-10 mq750:gap-10 mq750:flex-col mq450:gap-8">
+      <div className="self-stretch flex flex-row items-center justify-between flex-wrap content-center gap-20 xl:gap-32 z-10 mq750:gap-10 mq750:flex-col mq450:gap-8">
         <div className="flex-1 flex flex-col items-start justify-start py-5 px-0 box-border gap-8 min-w-[400px] mq750:gap-6 mq750:min-w-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-8 mq750:gap-6">
             <div className="self-stretch flex flex-col items-start justify-start gap-6">
@@ -57,7 +57,7 @@ const WhyUs = ({ className = "" }) => {
             </div>
           </div>
           <button className="flex flex-row items-center justify-center py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors gap-2 font-medium">
-       
+            Learn More
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>

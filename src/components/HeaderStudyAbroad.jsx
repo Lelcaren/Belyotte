@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const HeaderStudyAbroad = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-7xl mx-auto bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-center justify-start py-13xl px-xl box-border gap-12 text-center text-base text-color-scheme-1-text font-text-tiny-normal rounded-3xs shadow-sm 
+      className={`w-full xl:max-w-none lg:max-w-7xl mx-auto bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-center justify-start py-13xl px-xl box-border gap-12 text-center text-base text-color-scheme-1-text font-text-tiny-normal rounded-3xs shadow-sm 
       mq450:py-lg mq450:px-lg mq450:gap-4
       mq750:py-xl mq750:px-xl mq750:gap-6 ${className}`}
     >

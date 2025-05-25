@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const HeaderVa = ({ className = "" }) => {
   return (
     <section
-      className={`w-[1440px] h-[900px] bg-gradient-to-br from-blue-800 to-blue-900 overflow-hidden flex flex-row items-center justify-start py-0 px-16 box-border relative rounded-lg shadow-sm mq1050:w-full mq750:pl-8 mq750:pr-8 mq750:box-border ${className}`}
+      className={`w-full max-w-none h-[900px] bg-gradient-to-br from-blue-800 to-blue-900 overflow-hidden flex flex-row items-center justify-start py-0 px-16 box-border relative rounded-lg shadow-sm mq750:pl-8 mq750:pr-8 mq750:box-border ${className}`}
     >
       {/* Background overlay with slightly reduced opacity */}
       <div 

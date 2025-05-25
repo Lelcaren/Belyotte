@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const JourneyUs = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-[1440px] mx-auto bg-gray-50 overflow-hidden flex flex-col items-start justify-start py-24 px-16 box-border text-left relative rounded-lg shadow-sm mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-6 ${className}`}
+      className={`w-full bg-gray-50 overflow-hidden flex flex-col items-start justify-start py-24 px-16 box-border text-left relative rounded-lg shadow-sm mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-6 ${className}`}
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-20 translate-x-1/4 -translate-y-1/4"></div>
@@ -19,37 +19,39 @@ const JourneyUs = ({ className = "" }) => {
         </div>
       </div>
       
-      {/* Content */}
-      <div className="self-stretch flex flex-row items-center justify-between flex-wrap content-center gap-20 z-10 mq750:gap-10 mq750:flex-col mq450:gap-8">
-        <div className="flex-1 flex flex-col items-start justify-start py-5 px-0 box-border gap-8 min-w-[400px] mq750:gap-6 mq750:min-w-full">
-          <div className="self-stretch flex flex-col items-start justify-start gap-6">
-            <h1 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold font-[inherit] text-gray-900 mq450:text-2xl mq450:leading-[35px] mq1050:text-3xl mq1050:leading-[46px]">
-              Our Journey: Building <span className="text-blue-600">Bridges</span> Across Borders
-            </h1>
-            <div className="self-stretch relative text-lg leading-[150%] text-gray-700">
-              Founded in 2020, our company has transformed the landscape of
-              study abroad and virtual staffing. With a commitment to
-              excellence, we have helped thousands achieve their dreams of
-              international education and remote work.
+      {/* Content wrapper with max-width for readability */}
+      <div className="w-full max-w-7xl mx-auto z-10">
+        {/* Content */}
+        <div className="flex flex-row items-center justify-between flex-wrap content-center gap-20 mq750:gap-10 mq750:flex-col mq450:gap-8">
+          <div className="flex-1 flex flex-col items-start justify-start py-5 px-0 box-border gap-8 min-w-[400px] mq750:gap-6 mq750:min-w-full">
+            <div className="self-stretch flex flex-col items-start justify-start gap-6">
+              <h1 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold font-[inherit] text-gray-900 mq450:text-2xl mq450:leading-[35px] mq1050:text-3xl mq1050:leading-[46px]">
+                Our Journey: Building <span className="text-blue-600">Bridges</span> Across Borders
+              </h1>
+              <div className="self-stretch relative text-lg leading-[150%] text-gray-700">
+                Founded in 2020, our company has transformed the landscape of
+                study abroad and virtual staffing. With a commitment to
+                excellence, we have helped thousands achieve their dreams of
+                international education and remote work.
+              </div>
             </div>
+            
+            <button className="flex flex-row items-center justify-center py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors gap-2 font-medium">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
           </div>
           
-          <button className="flex flex-row items-center justify-center py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors gap-2 font-medium">
-         
-            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </button>
-        </div>
-        
-        {/* Image container with rounded corners and shadow */}
-        <div className="flex-1 min-w-[400px] rounded-lg overflow-hidden shadow-md mq750:min-w-full mq750:w-full">
-          <img
-            className="h-[640px] w-full object-cover mq1200:h-[580px] mq750:h-auto mq750:aspect-video"
-            loading="lazy"
-            alt="Company journey and international connections"
-            src="/ctava.jpg"
-          />
+          {/* Image container with rounded corners and shadow */}
+          <div className="flex-1 min-w-[400px] rounded-lg overflow-hidden shadow-md mq750:min-w-full mq750:w-full">
+            <img
+              className="h-[640px] w-full object-cover mq1200:h-[580px] mq750:h-auto mq750:aspect-video"
+              loading="lazy"
+              alt="Company journey and international connections"
+              src="/ctava.jpg"
+            />
+          </div>
         </div>
       </div>
       

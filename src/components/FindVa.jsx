@@ -23,7 +23,7 @@ ListItem.propTypes = {
 const FindVa = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-[1440px] bg-gradient-to-br from-blue-900 to-indigo-900 overflow-hidden flex flex-col items-start justify-start py-28 px-16 box-border gap-20 text-left text-base text-white font-Text-Small-Link relative rounded-lg shadow-md lg:pt-18 lg:pb-20 lg:box-border mq750:gap-10 mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-8 ${className}`}
+      className={`w-full bg-gradient-to-br from-blue-900 to-indigo-900 overflow-hidden flex flex-col items-start justify-start py-28 px-16 box-border gap-20 text-left text-base text-white font-Text-Small-Link relative rounded-lg shadow-md lg:pt-18 lg:pb-20 lg:box-border mq750:gap-10 mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-8 ${className}`}
     >
       {/* Background overlay with slightly reduced opacity */}
       <div 
@@ -40,8 +40,8 @@ const FindVa = ({ className = "" }) => {
         </div>
       </div>
       
-      {/* Content wrapper */}
-      <div className="self-stretch flex flex-row items-start justify-start flex-wrap content-start gap-20 z-10 mq750:gap-10 mq450:gap-5">
+      {/* Content wrapper with max-width constraint for readability */}
+      <div className="w-full max-w-[1440px] mx-auto self-stretch flex flex-row items-start justify-start flex-wrap content-start gap-20 z-10 mq750:gap-10 mq450:gap-5">
         <div className="flex-1 overflow-hidden flex flex-col items-start justify-start gap-4 min-w-[400px] mq750:min-w-full">
           <div className="flex flex-row items-center justify-start">
             <div className="relative leading-[150%] font-semibold text-blue-300 bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full">Empower</div>
@@ -77,8 +77,8 @@ const FindVa = ({ className = "" }) => {
         </div>
       </div>
       
-      {/* Image section */}
-      <div className="w-full flex items-center justify-center z-10">
+      {/* Image section with max-width constraint */}
+      <div className="w-full max-w-[1440px] mx-auto flex items-center justify-center z-10">
         <div className="relative w-full max-w-[1273px]">
           <img
             className="w-full h-auto max-h-[675px] relative object-cover rounded-lg shadow-lg"

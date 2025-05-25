@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const HeaderContact = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-[1440px] mx-auto bg-gradient-to-r from-blue-50 to-indigo-50 overflow-hidden flex flex-col items-start justify-start py-24 px-16 box-border text-left relative rounded-lg shadow-sm mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-6 ${className}`}
+      className={`w-full bg-gradient-to-r from-blue-50 to-indigo-50 overflow-hidden flex flex-col items-start justify-start py-24 px-16 box-border text-left relative rounded-lg shadow-sm mq750:py-16 mq750:px-8 mq750:box-border mq450:gap-6 ${className}`}
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 translate-x-1/4 -translate-y-1/4"></div>
@@ -20,17 +20,20 @@ const HeaderContact = ({ className = "" }) => {
         </div>
       </div>
       
-      {/* Content */}
-      <div className="self-stretch flex flex-row items-start justify-between flex-wrap content-start gap-20 z-10 mq750:gap-10 mq750:flex-col mq450:gap-8">
-        <div className="flex-1 flex flex-col items-start justify-start gap-4 min-w-[400px] mq750:min-w-full">
-          <h1 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold font-[inherit] text-gray-900 mq450:text-2xl mq450:leading-[35px] mq1050:text-3xl mq1050:leading-[46px]">
-            Our <span className="text-blue-600">Vision</span> Matters
-          </h1>
-        </div>
-        
-        <div className="flex-1 flex flex-col items-start justify-start gap-8 min-w-[400px] mq750:gap-6 mq750:min-w-full">
-          <div className="self-stretch relative text-lg leading-[150%] text-gray-700">
-            We connect ambitious individuals with world-class educational and professional opportunities, empowering the next generation of global leaders through study abroad programs and virtual assistance solutions.
+      {/* Content wrapper with max-width for readability */}
+      <div className="w-full max-w-7xl mx-auto z-10">
+        {/* Content */}
+        <div className="flex flex-row items-start justify-between flex-wrap content-start gap-20 mq750:gap-10 mq750:flex-col mq450:gap-8">
+          <div className="flex-1 flex flex-col items-start justify-start gap-4 min-w-[400px] mq750:min-w-full">
+            <h1 className="m-0 self-stretch relative text-4xl leading-[120%] font-bold font-[inherit] text-gray-900 mq450:text-2xl mq450:leading-[35px] mq1050:text-3xl mq1050:leading-[46px]">
+              Our <span className="text-blue-600">Vision</span> Matters
+            </h1>
+          </div>
+          
+          <div className="flex-1 flex flex-col items-start justify-start gap-8 min-w-[400px] mq750:gap-6 mq750:min-w-full">
+            <div className="self-stretch relative text-lg leading-[150%] text-gray-700">
+              We connect ambitious individuals with world-class educational and professional opportunities, empowering the next generation of global leaders through study abroad programs and virtual assistance solutions.
+            </div>
           </div>
         </div>
       </div>

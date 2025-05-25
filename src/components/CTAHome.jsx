@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const CTAHome = ({ className = "" }) => {
   return (
     <section
-      className={`w-full max-w-[1440px] mx-auto bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-sm overflow-hidden flex flex-col items-start justify-start py-28 px-16 box-border text-left text-29xl text-color-scheme-1-text font-text-tiny-normal
+      className={`w-full xl:max-w-none lg:max-w-[1440px] mx-auto bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-sm overflow-hidden flex flex-col items-start justify-start py-28 px-16 box-border text-left text-29xl text-color-scheme-1-text font-text-tiny-normal
         mq1050:gap-10 mq1050:pl-8 mq1050:pr-8 mq1050:box-border
         mq750:pt-[73px] mq750:pb-[73px] mq750:box-border
         mq450:gap-5 mq450:px-4 ${className}`}
@@ -17,8 +17,8 @@ const CTAHome = ({ className = "" }) => {
               Newsletter
             </span>
           </div>
-          <h1 className="m-0 self-stretch relative text-inherit leading-[120%] font-bold font-[inherit] 
-              mq1050:text-19xl mq1050:leading-[46px]
+          <h1 className="m-0 self-stretch relative text-inherit leading-[120%] font-bold font-[inherit]
+               mq1050:text-19xl mq1050:leading-[46px]
               mq450:text-10xl mq450:leading-[35px]">
             Stay Informed, <span className="text-blue-600">Stay Ahead!</span>
           </h1>
@@ -45,8 +45,6 @@ const CTAHome = ({ className = "" }) => {
             By clicking Sign Up, you agree to our Terms and Conditions.
           </div>
         </div>
-        
-        
       </div>
     </section>
   );

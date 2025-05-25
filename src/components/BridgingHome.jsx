@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const BridgingHome = ({ className = "" }) => {
   return (
     <section
-      className={`w-[1440px] bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-start justify-start py-28 px-16 box-border text-left text-base text-color-scheme-1-text font-text-tiny-normal rounded-lg shadow-sm mq1050:w-full mq750:gap-10 mq750:pl-8 mq750:pr-8 mq750:py-20 mq750:box-border mq450:gap-5 mq450:pt-[47px] mq450:pb-[47px] mq450:px-4 mq450:box-border mq1050:pt-[73px] mq1050:pb-[73px] mq1050:box-border ${className}`}
+      className={`w-full bg-gradient-to-br from-white to-blue-50 overflow-hidden flex flex-col items-start justify-start py-28 px-16 box-border text-left text-base text-color-scheme-1-text font-text-tiny-normal rounded-lg shadow-sm mq1050:w-full mq750:gap-10 mq750:pl-8 mq750:pr-8 mq750:py-20 mq750:box-border mq450:gap-5 mq450:pt-[47px] mq450:pb-[47px] mq450:px-4 mq450:box-border mq1050:pt-[73px] mq1050:pb-[73px] mq1050:box-border ${className}`}
     >
-      <div className="self-stretch flex flex-row items-center justify-start flex-wrap content-center gap-20 mq1050:gap-16 mq750:gap-10 mq450:gap-5">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-row items-center justify-start flex-wrap content-center gap-20 mq1050:gap-16 mq750:gap-10 mq450:gap-5">
         <div className="flex-1 flex flex-col items-start justify-start py-5 px-0 box-border gap-8 min-w-[400px] mq1050:min-w-[350px] mq750:gap-4 mq750:min-w-full mq750:order-2">
           <div className="self-stretch flex flex-col items-start justify-start gap-4">
             <div className="flex flex-row items-center justify-start">
@@ -31,7 +31,7 @@ const BridgingHome = ({ className = "" }) => {
           </div>
           
           <div className="flex flex-col gap-6">
-            <div className="flex flex-row items-center gap-8">
+            <div className="flex flex-row items-center gap-8 mq450:gap-4 mq450:flex-wrap">
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
                   <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
